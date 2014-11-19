@@ -48,8 +48,7 @@ demo.html可以预览你下载下来的字体图标。有了这个demo，前端�
 			url("../fonts/icomoon.ttf?v=1.5.2") format("truetype"), /* Safari, Android, iOS */
 			url("../fonts/icomoon.svg?v=1.5.2#Ionicons") format("svg");  /* Legacy iOS */
 		font-weight:normal; font-style:normal;
-	}
-	
+	}	
 	/* 字体图标基类 */
 	.u-ticon{
 	    display:inline-block();
@@ -74,7 +73,7 @@ demo.html可以预览你下载下来的字体图标。有了这个demo，前端�
 	
 关于使用，很简单，在你的标签上设置以上两个类就可以啦~如下：
 
-    <i class="u-fticon icon-user" title="账户设置"></i>
+    <i class="u-ticon icon-user" title="账户设置"></i>
 
 ## Demos
 
@@ -87,15 +86,19 @@ demo.html可以预览你下载下来的字体图标。有了这个demo，前端�
 
 ![](https://raw.githubusercontent.com/lzf0402/blogs/master/imgs/show4.png)
 
-下面的代码展示只使用一个标签以及JS控制样式切换来实现这一交互。
+下面的代码展示只使用**一个标签**以及JS控制样式切换来实现这一交互。
 
+	/* 字体图标基类 */
+	.u-ticon{
+		/* 同上 */
+	}
 	/* 切换按钮 */
 	.icon-toggle:before {
 		content: "\e634";
 	}
 	/* 按钮-启用停用切换 */
 	.u-togbtn{
-		$inline-block();position: relative; padding:0 10px 0 60px; 
+		position: relative; padding:0 10px 0 60px; 
 		height:33px;line-height:33px;font-size: 12px;
 		border-radius:3px;text-decoration:none;border-top:1px solid #27add6;
 		cursor:pointer;background:#2bbce8;
@@ -112,8 +115,8 @@ demo.html可以预览你下载下来的字体图标。有了这个demo，前端�
 
 节点运用样式：
 
-	<b title="点击切换" id="togglebtn" class="u-togbtn icon-toggle">已启用</b>　
-	<b title="点击切换" id="togglebtn" class="u-togbtn icon-toggle z-toggle">已停用</b>
+	<b title="点击切换" id="togglebtn" class="u-togbtn u-ticon icon-toggle">已启用</b>　
+	<b title="点击切换" id="togglebtn" class="u-togbtn u-ticon icon-toggle z-toggle">已停用</b>
 按钮的click事件里toggle下`z-toggle`类，即可实现两种状态的切换，`z-toggle`选择器里重置节点以及字体图标的UI。如此，仅使用一个节点，结合样式切换，就可实现按钮切换的效果。当然，通过传统的切图也是可以轻松实现这一效果，但在可维护方面，字体图标还是远胜一筹。试想下，如果想改一下配色方案，你无需重新切图，只要修改样式里的颜色值就可以啦~~
 
 ## Why use it？
